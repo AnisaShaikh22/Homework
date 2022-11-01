@@ -16,24 +16,36 @@ def calculateLetterGrade():
 
     totalGrade = 0.3*mid1 + 0.3*mid2 + 0.4*final
 
-    if totalGrade>= 90:
-        print(str(totalGrade)+ " --> AA")
+    if totalGrade >= 90:
+        print(str(totalGrade) + " --> AA")
 
-    elif totalGrade>= 85:
-        print(str(totalGrade)+ " --> BA")
+    elif totalGrade >= 85:
+        print(str(totalGrade) + " --> BA")
 
-    elif totalGrade>= 75:
-        print(str(totalGrade)+ " --> BB")
+    elif totalGrade >= 80:
+        print(str(totalGrade) + " --> BB")
 
-    elif totalGrade>= 65:
-        print(str(totalGrade)+ " --> CB")
+    elif totalGrade >= 75:
+        print(str(totalGrade) + " --> CB")
 
-    elif totalGrade>= 50:
-        print(str(totalGrade)+ " --> CC")
+    elif totalGrade >= 70:
+        print(str(totalGrade) + " --> CC")
+
+    elif totalGrade >= 65:
+        print(str(totalGrade) + " --> DC")
+
+    elif totalGrade >= 60:
+        print(str(totalGrade) + " --> DD")
+
+    elif totalGrade >= 55:
+        print(str(totalGrade) + " --> FD")
 
     else:
-        print("Ufortunately you are failed!")
+        print(str(totalGrade) + " --> FF" )
 
-
-# Test
-calculateLetterGrade()
+while(True):
+    calculateLetterGrade()
+    result = input("Do you want to exit? y/n")
+    if result == "y" or result == "Y" :
+        break
+    print()

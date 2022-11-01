@@ -19,9 +19,20 @@ class Question(Student):
         print("Student information:\n name: {}\n surname: {}\n class: {}\n total_grade: {}\n ".format(
             self.student_name, self.student_surname, self.student_class, total_grade))
 
-
-# test
-student = Student("Anisa", "Shaikh", "A2")
-question = Question(student)
-net_amount = question.net_amount(4, 46)
-question.calculate(question.net_amount(4, 46))
+#Take input from user
+#
+input_name = input("Please enter student name: ")
+input_surname = input("Please enter student surname: ")
+input_class = input("Please enter student class: ")
+exit = False
+try:
+    input_wrong_count = int(input("Number of incorrect points: "))
+    input_correct_count = int(input("Number of correct points: "))
+except ValueError as e:
+    print()
+    print("Input should be a number !")
+    exit = True
+if not exit:
+    student = Student(input_name,input_surname,input_class)
+    question = Question(student)
+    question.calculate(question.net_amount(input_wrong_count, input_correct_count))

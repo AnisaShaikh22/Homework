@@ -1,5 +1,7 @@
 def number_allocation(num):
-    if num>=100 or num<=9:
+    if num<0:
+        raise ValueError("The number should not be negative")
+    elif num>=100 or num<=9 :
         raise ValueError("The number should have two digits")
     return num
 
@@ -22,10 +24,13 @@ def number_pronounciation(num):
         else:
             return str(number) + "--> "+data[number // 10 * 10] + ' ' + data[number % 10]
 
-## Test
-## Uncomment each line to do the test
+def main():
+    try:
+        num = int(input("Please enter a number to pronounciate: "))
+        print(number_pronounciation(num))
+    except ValueError as e:
+        print()
+        print(e)
 
-print(number_pronounciation(25))
-print(number_pronounciation(87))
-print(number_pronounciation(109)) #ValueError
-print(number_pronounciation(7)) #ValueError
+if __name__ == "__main__":
+    main()
